@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width">
     <title>Zucora Home- Welcome Home</title>
     <meta name="description" content="Discover the benefits by being memeber of Zucora.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900|Open+Sans:400,600,700,800">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://zucorahome.com/Content/Zuc/styles/styles9d66868d59cc90dfcd5c.css">
     <style>
       /* -------------------------------------
             GLOBAL RESETS
@@ -54,13 +54,14 @@
         margin: 0;
         padding: 0;
        font-family:'Merriweather', serif;
-       font-family: PublicoHeadline,aktiv-grotesk,Helvetica,sans-serif
+       /*font-family: PublicoHeadline,aktiv-grotesk,Helvetica,sans-serif;*/
       }
 
       p,
       a {
         /*font-size: 14px;*/
        font-family: 'Open Sans', sans-serif;
+       /*font-family: aktiv-grotesk, Helvetica, sans-serif;*/
         color: #333;
       }
       .container{
@@ -68,6 +69,25 @@
         margin: 0 auto !important;
         padding: 10px;
       }
+      .steps-text{
+          position: absolute;
+        }
+
+        .steps-text > p{
+          color: #fff;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          font-weight: 300;
+          margin-top:13px;
+
+        }
+
+        .steps-text > p > span{
+          font-size: 40px;
+           font-family:'Merriweather', serif;
+           /*font-family: PublicoHeadline,aktiv-grotesk,Helvetica,sans-serif;*/
+        }
       /* -------------------------------------
                     BODY & CONTAINER
                 ------------------------------------- */
@@ -87,6 +107,17 @@
         .header-logo{
           width:75% !important;
         }
+
+        .steps-background{
+          background-size: cover !important;
+          height:950px !important;
+
+        }
+        .steps-text{
+          padding:0 2em;
+          margin-top:30%;
+        }
+        
       }
 
       @media only screen and (min-width:768px) {
@@ -95,21 +126,12 @@
           width:780px;
         }
 
-        .steps-text-div{
-          position: absolute;
-          padding:7em;
+        .steps-background{
+          height: 750px;
         }
-
-        .steps-text-div > p{
-          color: #fff;
-          font-size: 18px;
-        }
-
-        .steps-text-div > p > span{
-          font-size: 30px;
-           font-family:'Merriweather', serif;
-           font-family: PublicoHeadline,aktiv-grotesk,Helvetica,sans-serif;
-        }
+        .steps-text{
+          padding:7em 2em 0 3em;
+        }        
       }
     </style>
   </head>
@@ -125,7 +147,7 @@
                 <td>
                   
                   <!-- Header -->
-                  <div style="background-image:url('images/wave-shape-bottom-flat_indigo_RGB.svg');width:100%;transform:rotate(180deg);height:370px;background-size:contain;background-repeat: no-repeat;" class="header-background">
+                  <div style="background-image:url('images/wave-shape-bottom-flat_indigo_RGB.svg');width:100%;transform:rotate(180deg);height:250px;background-size:cover;background-repeat: no-repeat;" class="header-background">
                     
                       <img src="https://zucorahome.com/Images/Zuc/images/ZucoraHome-brand-white.svg" alt="ZucoraHome logo." style="width:45%;height: auto;margin:0 auto;display: block;z-index:100;position: relative;transform: rotate(180deg);position: relative;bottom: -48%;" class="header-logo">
                   </div>
@@ -133,8 +155,8 @@
                     <tr>
                       <td>
                        <div style="background-color: #fff;width:100%;margin: 0 auto;">
-                          <h1 style="color:#434DA0;font-weight: 300;text-align: center;margin-top:1em;">Welcome to the <span style="font-weight: 600;">Smarter Partner Program.</span></h1>
-                          <p style="font-size: 18px;color:#36384B;text-align: center;padding:0 3em;">
+                          <h1 style="color:#434DA0;font-weight: 300;text-align: center;margin-top:1em;font-size: 32px;">Welcome to the <span style="font-weight: 600;">Smarter Partner Program.</span></h1>
+                          <p style="font-size: 18px;color:#36384B;text-align: center;padding:1em 3em;">
                             <span style="color:#434DA0;font-weight: 500;">[Insert, market partner first name],</span> your ZucoraHome Sales Representative <br><span style="color:#434DA0;font-weight: 500;">[Rep_first_name],</span>invited you to join Canada’s most exciting new product protection and home services program.</p>
                           <p style="font-size: 18px;color:#36384B;text-align: center;padding:0 3em;">A key part of the Smarter Partner Program is the innovative technology system which makes plan registration easy, ordering and paying for products seamless, and receiving commissions simple and direct.</p>
                        </div>
@@ -147,17 +169,58 @@
                     <tbody>
                       <tr>
                         <td>
-                          <div style="background-image:url('images/wave-shape-bottom-flat_indigo_RGB.svg');width:100%;height: 373px;background-size: contain;background-repeat: no-repeat;position: relative;z-index: -100;">
-                            <div style="position: absolute;padding:7em;" class="steps-text-div">
-                              <h2 style="color: #fff;font-weight: 300;font-size: 26px;">Steps for <span style="font-weight: 600;">Getting Started</span></h2>
-                              <p ><span style="">1.</span>Register all Zucora Complete or Zucora Standard plans. </p>
-                            </div>
+                        <div class="steps-background" style="background-image:url('images/steps-purple-background.svg');width:100%;background-size: contain;background-repeat: no-repeat;position: relative;z-index: -100;">
+                          <div style="position: absolute;" class="steps-text">
+                             <h2 style="color: #fff;font-weight: 300;font-size: 26px;">Steps for <span style="font-weight: 600;">Getting Started</span></h2>
+                             <p><span style="">1.&nbsp;</span>&nbsp;Register all Zucora Complete or Zucora Standard plans.
+                              </p>
+                              <a href="#/" class="zuc-btn zuc-btn-primary" style="margin-left:3em;">Register Plans</a>
+                              <p><span>2.&nbsp;</span>&nbsp;Return to this email once all of your existing plans are registered.</p>
+                              <p><span>3.&nbsp;</span>&nbsp;Gather your retail location information and financial details so you can complete your profile. This includes:</p>
+                                   <ul style="font-family: 'Open Sans', sans-serif;margin:10px 0 0 4.5em;">
+                                    <li style="color:#fff;font-size: 18px;">Bank transit number, institution number, and account number</li>
+                                    <li style="color:#fff;font-size: 18px;"> Credit card information. *(Please note: credit card information is not required if purchasing through a buying group or by pre-authorized debit)</li>
+                                   </ul>
+                             <p style="margin-top:0;position: relative;bottom: 1em;"><span>4.&nbsp;</span>&nbsp;Begin your journey to a smarter way to retail. Get started by creating your system password and logging in.</p>
+                             <a href="#/" class="zuc-btn zuc-btn-primary" style="margin-left:3em;margin-top:10px;">Get started</a>
                           </div>
-                          <div style="background-image:url('images/wave-shape-bottom-flat_indigo_RGB.svg');width:100%;height: 372px;background-size: contain;background-repeat: no-repeat;transform: rotateX(180deg);position: relative;z-index: -100;">
-                            
+                        </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="padding: 0 2em 0 3em;">
+                            <h3 style="color:#36384B;font-weight: 600;text-align: center;">FAQs</h3>
+                            <p style="color:#a3acff;font-weight: 600;font-size: 18px;margin-top:13px;">Why do I need to register Zucora Complete and Zucora Standard plans before I can set up my Smarter Partner account?</p>
+                            <p style="color:#36384B;font-size: 17px;">It’s critical that all Zucora Complete and Zucora Standard plans are registered because effective June 30, 2020, these plan types will no longer be available for sale. Failure to register them will mean that the customer does not have coverage. All registered plans will be visible to you on the Smarter Partner system, however; you will not be able to edit or add information to these plan types.</p>
+
+                            <p style="color:#a3acff;font-weight: 600;font-size: 18px;margin-top:13px;">Why is banking information required?</p>
+                            <p style="color:#36384B;font-size: 17px;">Your banking information must be provided in order for ZucoraHome to deliver your commissions for the sale and ongoing monthly payments of the Smarter Living Plan. </p>
+
+                             <p style="color:#a3acff;font-weight: 600;font-size: 18px;margin-top:13px;">Is adding my financial information required?</p>
+                            <p style="color:#36384B;font-size: 17px;">The Smarter Partner Program goal is to make business operations simple so you can spend more time with your sales associates and customers. Adding your financial information when you set up your Profile in the Smarter Partner system allows ZucoraHome to deliver payments directly to you and creates an easy-to-use process for purchasing plans and products. The program also creates opportunities for you such as free shipping and earning rewards - both of which lead to more savings for you. </p>
+
+                             <p style="color:#a3acff;font-weight: 600;font-size: 18px;margin-top:13px;">Are there payment options?</p>
+                            <p style="color:#36384B;font-size: 17px;">Yes, the Smarter Partner system lets you customize your payment preferences. For example, you may select pre-authorized debit for purchasing furniture care kits or PureCare products, or they can be charged to your credit card, or if applicable, charged to your Buying Group account. </p>
+
+
+                            <p style="color:#a3acff;font-weight: 600;font-size: 18px;margin-top:13px;">I am a member of a Buying Group. Does this change what financial information is required when I’m setting up my account?</p>
+                            <p style="color:#36384B;font-size: 17px;">Banking information is required, but due to your arrangement with a Buying Group, your credit card details are only required if you choose to purchase furniture care kits and PureCare products with it rather than through your account with the Buying Group.</p>
+                        </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="zuc-title-flag" style="margin:2em auto;width: 7em;">
+                            <div class="--green"></div>
+                          </div>
+                          <div style="padding:0 3em;">
+                            <p style="color:#36384B;font-size: 16px;font-weight: 400;">Full details about the <span style="color:#434DA0;font-weight: 700; ">Smarter Partner Program, Smart Product Protection Plans</span> and <span style="color:#434DA0;font-weight: 700; ">Smarter Living Plan</span> are available through your sales representative.</p>
                           </div>
                         </td>
                       </tr>
+                      <tr></tr>
+
                     </tbody>
                   </table>
                 </td>
