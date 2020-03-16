@@ -1,0 +1,308 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Invoice screen</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <meta name="description" content="Invoice screen">
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+<style>
+	.body{
+		width: 100%;
+		max-width: 100%;
+		margin:0;
+		padding:0;
+	}
+	.header{
+		background-color: #434DA0;
+		padding:1em 4em;
+		display:flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.screen-reader{
+		visibility: hidden;
+		display: none;
+	}
+	.main-content{
+		width:100%;
+		max-width: 100%;
+		background-color: white;
+		/*padding: 3em 20%;*/
+	}
+
+	.main-content h1{
+		color: #434DA0;
+		font-family: 'Merriweather', serif;
+		font-weight: 900;
+		margin:3em 0 2em 4em;
+	}
+	.bill-header{
+		display: grid;
+		grid-template-columns: 30% 30% 40%;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin:0 6em;
+	}
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin: 0;
+        padding: 0;
+       font-family:'Merriweather', serif;
+      }
+
+      p,
+      a {
+        margin:0;
+        padding:0;
+       font-family: 'Open Sans', sans-serif;
+       color: #36384B;
+       text-decoration: none;
+       	
+      }
+      .zuc-btn{
+      	    width: auto;
+		    display: inline-block;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    cursor: pointer;
+		    -webkit-transition: all .4s;
+		    transition: all .4s;
+		    padding: 15px 20px;
+		    border-radius: 400px;
+		    position: relative;
+		    vertical-align: middle;
+		    /*font-size: 12px;*/
+      }
+
+      .zuc-btn-secondary{
+      	color: #f7f7f7;
+	    border: none;
+	    font-weight: 700;
+	    position: relative;
+	    -webkit-box-shadow: 0 0.1vw 3.43vw 0 hsla(0,0%,5%,.2);
+	    box-shadow: 0 0.1vw 3.43vw 0 hsla(0,0%,5%,.2);
+	    padding: 22px 40px;
+	    text-shadow: 0 0 10px transparent;
+	    background: -webkit-gradient(linear,left top,right top,color-stop(34%,#434da0),to(#a2acff));
+	    background: linear-gradient(90deg,#434da0 34%,#a2acff);
+	    background-position: 50%;
+	    background-size: cover;
+      }
+
+      .flex-buttons{
+      	display: flex;
+      	align-items: center;
+      	justify-content: space-around;
+      }
+
+      .invoice-table-container{
+      	border: 2px solid #36384B;
+    	height: auto;
+    	margin:2em 5em;
+      }
+
+      .invoice-table-container table, .nested-table table{
+      	    border-collapse: collapse;
+		    margin: 0;
+		    padding: 0;
+		    width: 100%;
+		    table-layout: fixed;
+      }
+
+      .invoice-table-container table thead tr{
+			/*background-color: #434DA0;*/
+			/*color: #fff;    	*/
+			font-family: 'Open Sans',sans-serif;
+			font-weight: normal;
+			font-size: 16px;
+      }
+
+      .invoice-table-container table th, td{
+      	padding:5px;
+      	font-weight: 600;
+      }
+
+      .invoice-table-container table td{
+      	text-align: center;
+      	font-family: 'Open Sans',sans-serif;
+      	font-size: 14px;
+      }
+
+      .nested-table{
+      	border:2px solid #d3d3df;
+      }
+
+      .nested-table table thead tr{
+      	background-color: white !important;
+      	padding:5px;
+      	color: #434DA0 !important;
+      }
+
+      .nested-table table tr{
+      	border-bottom: 2px solid #d3d3df;
+      }
+
+      .footer-text{
+      	width:60%;
+      	display: block;
+      	margin: 0 auto;
+      	margin-bottom: 1em;
+      }
+
+      .footer-text p{
+      	font-family: 'Open Sans', sans-serif;
+      	color: #36384B;
+      	font-size: 14px;
+      	text-align: center;
+      	font-weight: 600;
+      }
+</style>
+</head>
+
+<body class="body">
+	<navigation class="header">
+		<div>
+			<img src="https://mcusercontent.com/0febcce314ba608508eb27451/images/2f12e0c4-0da2-4e53-8f66-43b59364fa96.png" style="width:40%;">
+		</div>
+	</navigation>
+	<section class="main-content">
+		<h1 class="screen-reader">Invoice with details</h1>
+		<h1>Invoice</h1>
+		<div class="bill-header">
+			<div>
+				<p style="font-weight: 600;font-size: 15px;">Bill to:</p>
+				<p>Company name</p>
+				<p>Address, line 1</p>
+				<p>Address, line 2</p>
+				<p>City, Province</p>
+				<p>Postal Code</p>
+				<p>Country</p>
+			</div>
+			<div>
+				<p style="font-weight: 600;font-size: 15px;">Ship to:</p>
+				<p>Company name</p>
+				<p>Address, line 1</p>
+				<p>Address, line 2</p>
+				<p>City, Province</p>
+				<p>Postal Code</p>
+				<p>Country</p>
+			</div>
+			<div class="flex-buttons">
+				<a href="#/" role="button" class="zuc-btn zuc-btn-secondary">Pay</a>
+				<a href="#/" role="button" class="zuc-btn zuc-btn-secondary">Download</a>
+			</div>
+		</div>
+		<div class="invoice-table-container">
+			<table>
+				<thead>
+					<tr style="background-color: #434DA0;color: white;width: 100%;">
+						<th scope="col">Invoice #</th>
+						<th scope="col">Customer PO #</th>
+						<th scope="col">Date Issued</th>
+						<th scope="col">Due Date</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td data-label="Invoice #">123456</td>
+						<td data-label="Customer PO #">po-1234</td>
+						<td data-label="Date Issued">mm/dd/yyyy</td>
+						<td data-label="Due Date">mm/dd/yyyy</td>
+						<td data-label=""></td>
+						<td data-label=""></td>
+					</tr>
+					<tr>
+						<table class="nested-table" style="width:98% !important;margin:15px auto;">
+								<thead>
+									<tr style="border-bottom: 2px solid #d3d3df;color: #434DA0;">
+										<th scope="col" style="width:25%;">Item Code</th>
+										<th scope="col" style="width:30%;">Description</th>
+										<th scope="col" style="width: 15%;">QTY #</th>
+										<th scope="col" style="width: 15%;">Unit Price</th>
+										<th scope="col" style="width: 15%;">Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="border-bottom: 1px solid #d3d3df;">
+										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
+										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
+										<td data-label="QTY" style="width: 15%;">8.00</td>
+										<td data-label="Unit Price" style="width: 15%;">41.99</td>
+										<td data-label="Total" style="width: 15%;">335.92</td>
+									</tr>
+									<tr style="border-bottom: 1px solid #d3d3df;">
+										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
+										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
+										<td data-label="QTY" style="width: 15%;">8.00</td>
+										<td data-label="Unit Price" style="width: 15%;">41.99</td>
+										<td data-label="Total" style="width: 15%;">335.92</td>
+									</tr>
+									<tr style="border-bottom: 1px solid #d3d3df;">
+										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
+										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
+										<td data-label="QTY" style="width: 15%;">8.00</td>
+										<td data-label="Unit Price" style="width: 15%;">41.99</td>
+										<td data-label="Total" style="width: 15%;">335.92</td>
+									</tr>
+								</tbody>
+						</table>
+					</tr>
+					<tr class="invoice-table-container">
+						<table style="margin-bottom: 15px;">
+							<tbody>
+								<tr>
+									<td data-label="Invoice #"></td>
+									<td data-label="Customer PO #"></td>
+									<td data-label=""></td>
+									<td data-label=""></td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Subtotal</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$1,935.50</td>
+								</tr>
+								<tr>
+									<td data-label="Invoice #"></td>
+									<td data-label="Customer PO #"></td>
+									<td data-label=""></td>
+									<td data-label=""></td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Tax 1</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$97.0</td>
+								</tr>
+								<tr>
+									<td data-label="Invoice #"></td>
+									<td data-label="Customer PO #"></td>
+									<td data-label=""></td>
+									<td data-label=""></td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Tax 2</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$0</td>
+								</tr>
+								<tr>
+									<td data-label="Invoice #"></td>
+									<td data-label="Customer PO #"></td>
+									<td data-label=""></td>
+									<td data-label=""></td>
+									<td data-label="">Total</td>
+									<td data-label="">$2,036.50</td>
+								</tr>
+							</tbody>
+						</table>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="footer-text">
+			<p>Registered Office: Zucora Inc. 552 Clarke Road, London, Ontario N5V 3K5, Canada<br>Company Registration No: 101901312RT00001.</p>
+		</div>
+	</section>
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>
