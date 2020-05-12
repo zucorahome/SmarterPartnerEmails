@@ -7,7 +7,7 @@
   <title>Invoice screen</title>
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
   <meta name="description" content="Invoice screen">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 <style>
 	.body{
@@ -21,7 +21,12 @@
 		padding:1em 4em;
 		display:flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
+	}
+
+	.header> div> img{
+		display: flex;
+		margin:0 auto;
 	}
 	.screen-reader{
 		visibility: hidden;
@@ -31,20 +36,21 @@
 		width:100%;
 		max-width: 100%;
 		background-color: white;
-		/*padding: 3em 20%;*/
+		/*padding: 3% 12%;*/
 	}
 
 	.main-content h1{
 		color: #434DA0;
 		font-family: 'Merriweather', serif;
 		font-weight: 900;
-		margin:3em 0 2em 4em;
+		font-size: 4em;
+		
 	}
 	.bill-header{
 		display: grid;
-		grid-template-columns: 30% 30% 40%;
-		align-items: flex-end;
-		justify-content: space-between;
+		grid-template-columns: 60% 40%;
+		align-items: center;
+		justify-content:center;
 		margin:0 6em;
 	}
 
@@ -55,16 +61,17 @@
       h5 {
         margin: 0;
         padding: 0;
-       font-family:'Merriweather', serif;
+       font-family:'PublicoHeadline',Merriweather, serif;
       }
 
       p,
       a {
         margin:0;
         padding:0;
-       font-family: 'Open Sans', sans-serif;
+       font-family: 'aktiv-grotesk',Open Sans, sans-serif;
        color: #36384B;
        text-decoration: none;
+       font-size: 16px;
        	
       }
       .zuc-btn{
@@ -89,7 +96,7 @@
 	    position: relative;
 	    -webkit-box-shadow: 0 0.1vw 3.43vw 0 hsla(0,0%,5%,.2);
 	    box-shadow: 0 0.1vw 3.43vw 0 hsla(0,0%,5%,.2);
-	    padding: 22px 40px;
+	    padding: 18px 50px;
 	    text-shadow: 0 0 10px transparent;
 	    background: -webkit-gradient(linear,left top,right top,color-stop(34%,#434da0),to(#a2acff));
 	    background: linear-gradient(90deg,#434da0 34%,#a2acff);
@@ -126,7 +133,7 @@
       }
 
       .invoice-table-container table th, td{
-      	padding:5px;
+      	padding:10px;
       	font-weight: 600;
       }
 
@@ -134,6 +141,7 @@
       	text-align: center;
       	font-family: 'Open Sans',sans-serif;
       	font-size: 14px;
+      	word-break: break-word;
       }
 
       .nested-table{
@@ -164,37 +172,142 @@
       	text-align: center;
       	font-weight: 600;
       }
+
+      @media screen and (max-width: 768px){
+      	.header> div>img{
+      		width:80%;
+      	}
+      	.main-content h1{
+      		padding:10px;
+      		font-size: 3em;
+      	}
+
+      	.bill-header{
+      		grid-template-columns: 100%;
+      		display: grid;
+      		margin:0 auto;
+      	}
+
+      	.invoice-table-container{
+      		margin:1em auto;
+      	}
+
+      }
+
+      @media screen (min-width: 769px) and (max-width: 1024px){
+      	.bill-header{
+      		grid-template-columns: 50% 50%;
+      		justify-content: center;
+      		align-content: center;
+      		padding:10px;
+      	}
+      	.header> div>img{
+      		width:80%;
+      	}
+
+
+      }
+
+      @media screen and (max-width: 1024px){
+      
+      	.billing-addresses{
+      		grid-template-columns: 100%;
+      		grid-row-gap: 1em;
+      		display: grid;
+      	}
+      	.main-content{
+      		width: 95%;
+      		margin:2em auto;
+      	}
+
+      	.flex-buttons{
+      		flex-direction: column;
+      	}
+
+      	.flex-buttons a{
+      		margin: 1em;
+      	}
+
+      	.nested-table thead{
+      		    border: none;
+			    clip: react(0 0 0 0);
+			    width: 1px;
+			    height: 1px;
+			    margin: -1px;
+			    overflow: hidden;
+			    padding: 0;
+			    position: absolute;
+      	}
+
+      	.nested-table tbody td::before{
+      		content: attr(data-label);
+		    float: left;
+		    font-weight: 700;
+		    color: #434DA0;
+      	}
+
+      	.nested-table tbody td{
+		    display: block;
+		    font-size: 0.8em;
+		    text-align: right;
+		}
+      }
+
+       @media screen and (min-width: 769px){
+      	.header> div>img{
+      		width: 25%;
+      	}
+
+      	.main-content h1{
+      		padding:0.5em 1.5em;
+      	}
+      }
+      @media screen and (min-width: 1025px){
+
+      	
+      	.billing-addresses{
+      		display: grid;
+      		grid-template-columns: 50% 50%;
+      	}
+
+      }
+      @media screen and (min-width: 1280px){
+      	.main-content{
+      		width: 75%;
+      		margin:3em auto;
+      	}
+      }
+
 </style>
 </head>
 
 <body class="body">
 	<navigation class="header">
 		<div>
-			<img src="https://mcusercontent.com/0febcce314ba608508eb27451/images/2f12e0c4-0da2-4e53-8f66-43b59364fa96.png" style="width:40%;">
+			<img src="https://mcusercontent.com/0febcce314ba608508eb27451/images/2f12e0c4-0da2-4e53-8f66-43b59364fa96.png">
 		</div>
 	</navigation>
 	<section class="main-content">
 		<h1 class="screen-reader">Invoice with details</h1>
 		<h1>Invoice</h1>
 		<div class="bill-header">
-			<div>
-				<p style="font-weight: 600;font-size: 15px;">Bill to:</p>
-				<p>Company name</p>
-				<p>Address, line 1</p>
-				<p>Address, line 2</p>
-				<p>City, Province</p>
-				<p>Postal Code</p>
-				<p>Country</p>
+			<div class="billing-addresses">
+				<div>
+					<p style="font-weight: 600;font-size: 15px;">Bill to:</p>
+					<p>{VendorCompanyName}</p>
+	               <p>{VendorAddress}</p>
+	               <p>{CityProvincePostalCode}</p>
+	               <p>{VendorPhone}</p>
+				</div>
+				<div>
+					<p style="font-weight: 600;font-size: 15px;">Ship to:</p>
+					<p>{VendorCompanyName}</p>
+	               <p>{ShipToAddress}</p>
+	               <p>{ShipToCityProvincePostalCode}</p>
+	               <p>{VendorPhone}</p>
+				</div>
 			</div>
-			<div>
-				<p style="font-weight: 600;font-size: 15px;">Ship to:</p>
-				<p>Company name</p>
-				<p>Address, line 1</p>
-				<p>Address, line 2</p>
-				<p>City, Province</p>
-				<p>Postal Code</p>
-				<p>Country</p>
-			</div>
+
 			<div class="flex-buttons">
 				<a href="#/" role="button" class="zuc-btn zuc-btn-secondary">Pay</a>
 				<a href="#/" role="button" class="zuc-btn zuc-btn-secondary">Download</a>
@@ -214,12 +327,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td data-label="Invoice #">123456</td>
-						<td data-label="Customer PO #">po-1234</td>
-						<td data-label="Date Issued">mm/dd/yyyy</td>
-						<td data-label="Due Date">mm/dd/yyyy</td>
-						<td data-label=""></td>
-						<td data-label=""></td>
+						 <td data-label="Invoice #">{PONumber}</td>
+	                     <td data-label="Customer PO #">{InvoiceNumber}}</td>
+	                     <td data-label="Date Issued">{Date}</td>
+	                     <td data-label="Due Date">{DueDate}</td>
+	                     <td data-label=""></td>
+	                     <td data-label=""></td>
 					</tr>
 					<tr>
 						<table class="nested-table" style="width:98% !important;margin:15px auto;">
@@ -232,29 +345,17 @@
 										<th scope="col" style="width: 15%;">Total</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr style="border-bottom: 1px solid #d3d3df;">
-										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
-										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
-										<td data-label="QTY" style="width: 15%;">8.00</td>
-										<td data-label="Unit Price" style="width: 15%;">41.99</td>
-										<td data-label="Total" style="width: 15%;">335.92</td>
-									</tr>
-									<tr style="border-bottom: 1px solid #d3d3df;">
-										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
-										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
-										<td data-label="QTY" style="width: 15%;">8.00</td>
-										<td data-label="Unit Price" style="width: 15%;">41.99</td>
-										<td data-label="Total" style="width: 15%;">335.92</td>
-									</tr>
-									<tr style="border-bottom: 1px solid #d3d3df;">
-										<td data-label="Item code" style="width:25%;">ZXCVB-8876</td>
-										<td data-label="Description" style="width:30%;">Microfibre Luxury Sheet Set Twin XL White</td>
-										<td data-label="QTY" style="width: 15%;">8.00</td>
-										<td data-label="Unit Price" style="width: 15%;">41.99</td>
-										<td data-label="Total" style="width: 15%;">335.92</td>
-									</tr>
-								</tbody>
+								 <tbody>
+		                           <!-- {BeginLoop1 Item in TemplateData.LineItems} -->
+			                           <tr style="border-bottom: 1px solid #d3d3df;">
+			                              <td data-label="Item code">{Item.Number}</td>
+			                              <td data-label="Description">{Item.Description}</td>
+			                              <td data-label="QTY">{Item.Quantity}</td>
+			                              <td data-label="Unit Price">${Item.UnitPrice}</td>
+			                              <td data-label="Total">${Item.Total}</td>
+			                           </tr>
+		                           <!-- {EndLoop1} -->
+		                        </tbody>
 						</table>
 					</tr>
 					<tr class="invoice-table-container">
@@ -266,23 +367,23 @@
 									<td data-label=""></td>
 									<td data-label=""></td>
 									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Subtotal</td>
-									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$1,935.50</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">${Subtotal}</td>
 								</tr>
 								<tr>
 									<td data-label="Invoice #"></td>
 									<td data-label="Customer PO #"></td>
 									<td data-label=""></td>
 									<td data-label=""></td>
-									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Tax 1</td>
-									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$97.0</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">HST/GST</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">${Tax1}</td>
 								</tr>
 								<tr>
 									<td data-label="Invoice #"></td>
 									<td data-label="Customer PO #"></td>
 									<td data-label=""></td>
 									<td data-label=""></td>
-									<td data-label="" style="border-bottom: 1px solid #d3d3df;">Tax 2</td>
-									<td data-label="" style="border-bottom: 1px solid #d3d3df;">$0</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">PST/QST</td>
+									<td data-label="" style="border-bottom: 1px solid #d3d3df;">${Tax2}</td>
 								</tr>
 								<tr>
 									<td data-label="Invoice #"></td>
@@ -290,7 +391,7 @@
 									<td data-label=""></td>
 									<td data-label=""></td>
 									<td data-label="">Total</td>
-									<td data-label="">$2,036.50</td>
+									<td data-label="">CAD/USD{Total}</td>
 								</tr>
 							</tbody>
 						</table>
